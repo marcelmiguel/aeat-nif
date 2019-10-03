@@ -1,8 +1,6 @@
 ## Library to check Spanish NIF/CIF against government web service
 
-[![Actions Status](https://github.com/marcelmiguel/aeat-nif/workflows/test-build/badge.svg)](https://github.com/marcelmiguel/aeat-nif/actions) [![GitHub issues](https://img.shields.io/github/issues-raw/marcelmiguel/aeat-nif/siplasplas.svg?maxAge=2592000)]() 
-
-[![GitHub license](https://img.shields.io/github/license/marcelmiguel/StrapDown.js.svg)](https://github.com/marcelmiguel/StrapDown.js/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/release/marcelmiguel/StrapDown.js.svg)](https://GitHub.com/marcelmiguel/StrapDown.js/releases)
+[![Actions Status](https://github.com/marcelmiguel/aeat-nif/workflows/test/badge.svg)](https://github.com/marcelmiguel/aeat-nif/actions) [![GitHub issues](https://img.shields.io/github/issues-raw/marcelmiguel/aeat-nif/siplasplas.svg?maxAge=2592000)]() 
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-go.svg)](https://forthebadge.com)
 
