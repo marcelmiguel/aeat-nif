@@ -9,7 +9,7 @@ This lib works but requires still some important job to do (for security reasons
 # Install
 
 ``` sh
-go get github.com/marcelmiguel/aeat-nif
+go get github.com/marcelmiguel/aeatnif
 ```
 
 Get pfx file
