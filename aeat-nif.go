@@ -1,4 +1,4 @@
-package AEATNIF
+package aeatnif
 
 import (
 	"bytes"
