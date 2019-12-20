@@ -104,7 +104,7 @@ func TestServiceErrorCharSet(t *testing.T) {
 	//To correctly test it, chnage xml call to be an incorrect value
 	name, _, err := srv.SoapCall("", "")
 	if err == nil {
-		t.Errorf("Error, beacuse it must fail, NIF invalid %s", *name)
+		t.Errorf("Error, because it must fail, NIF invalid %s", *name)
 		log.Println(err)
 	} else {
 		log.Println("OK, must fail", err)

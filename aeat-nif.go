@@ -14,12 +14,14 @@ import (
 	"github.com/clbanning/mxj"
 )
 
+// VNifV2 object for identification id
 type VNifV2 struct {
 	url          string
 	certFile     string
 	certPassword string
 }
 
+// NewVNifV2 create an object to consult oficial identification for spanish government
 func NewVNifV2(url string, certFile string, certPassword string) *VNifV2 {
 	if url == "" {
 		url = ""
@@ -86,17 +88,14 @@ func convertResults(soapResponse *mxj.Map) (*string, *string, error) {
 			nombreResult := xmlNombre.(string)
 			nifResult := xmlNif.(string)
 			return &nombreResult, &nifResult, nil
-		} else {
-			return nil, nil, errors.New("Identificador fiscal o nombre inválido")
 		}
-	} else {
-		errorMessage, err := soapResponse.ValueForPath("Envelope.Body.Fault.faultstring") //.#text
-		if err != nil {
-			return nil, nil, errors.New("Certificado erróneo o expirado o servicio de la Agencia Tributaria inaccesible" + err.Error())
-		} else {
-			return nil, nil, errors.New(errorMessage.(string))
-		}
+		return nil, nil, errors.New("Identificador fiscal o nombre inválido")
 	}
+	errorMessage, err := soapResponse.ValueForPath("Envelope.Body.Fault.faultstring") //.#text
+	if err != nil {
+		return nil, nil, errors.New("Certificado erróneo o expirado o servicio de la Agencia Tributaria inaccesible" + err.Error())
+	}
+	return nil, nil, errors.New(errorMessage.(string))
 }
 
 func verify(cert *x509.Certificate) error {
@@ -122,6 +121,7 @@ func verify(cert *x509.Certificate) error {
 	}
 }
 
+// SoapCall Call the server to identifycheck if nif and name are valid
 func (service *VNifV2) SoapCall(nif string, name string) (*string, *string, error) {
 
 	// External certificate
